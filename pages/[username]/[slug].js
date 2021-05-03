@@ -1,6 +1,6 @@
 import styles from "../../styles/Posts.module.css";
 import PostContent from "../../components/PostContent";
-import Metatags from "../../components/Metatags";
+import Metatags from "../../components/MetaTags";
 import { UserContext } from "../../lib/context";
 import { firestore, getUserWithUsername, postToJSON } from "../../lib/fireBase";
 

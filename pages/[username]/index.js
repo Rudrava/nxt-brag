@@ -1,7 +1,7 @@
 import { getUserWithUsername, postToJSON } from "../../lib/fireBase";
 import UserProfile from "../../components/UserProfile";
 import PostFeed from "../../components/PostFeed";
-import Head from "next/head";
+import MetaTags from "../../components/MetaTags";
 
 export async function getServerSideProps({ query }) {
   // query is a object with username in it as we made the file as [username ]
@@ -32,6 +32,11 @@ export async function getServerSideProps({ query }) {
 const UserProfilePage = ({ user, posts }) => {
   return (
     <main>
+      <MetaTags
+        title={user.username}
+        desc={`profile for ${user.username}`}
+        image={user.photoURL}
+      />
       <UserProfile user={user} />
       <PostFeed posts={posts} />
     </main>
